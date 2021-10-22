@@ -1,9 +1,3 @@
 # one-remote-webui
 
-
-
-
-
-
-
-brainstorming, requirements, etc in notes.md
+Moved UI code from oneremote-source
