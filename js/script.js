@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+"use strict";
+
 let xhr = new XMLHttpRequest();
 xhr.open("GET", "temp_data/tatasky.csv");
 // /WebUI/temp_data/tatasky.csv = http://127.0.0.1:5500/WebUI/temp_data/tatasky.csv
@@ -41,13 +44,13 @@ xhr.onload = function() {
             let divvy = document.createElement('div');
             divvy.className = "list-item flex-container flex-row justify-content_spacebetween";
             group.append(divvy);
-            left_div = document.createElement('div');
+            let left_div = document.createElement('div');
             left_div.className = 'left flex-container flex-column justify-content_center';
-            right_div = document.createElement('div');
+            let right_div = document.createElement('div');
             right_div.className = 'right flex-container flex-column justify-content_center';
             divvy.append(left_div);
             divvy.append(right_div);
-            channel_name_div = document.createElement('div');
+            let channel_name_div = document.createElement('div');
             channel_name_div.className = "name";
             channel_name_div.innerHTML = `${entry[1]}`;
             left_div.append(channel_name_div);
@@ -66,11 +69,11 @@ function searchFunction() {
     filter = input.value.toUpperCase();
     listGroup = document.getElementsByClassName('list-group')[0];
     listItem = document.getElementsByClassName('list-item');
-    for (i = 0; i < listItem.length; i++){
+    for (let i = 0; i < listItem.length; i++){
         chanName = listItem[i].getElementsByClassName("name")[0];
         textValue = chanName.innerText;
         if (textValue.toUpperCase().indexOf(filter) > -1) {
-            listItem[i].style.display="";
+            listItem[i].style.display="flex";
         } else {
             listItem[i].style.display = "none";
         };
