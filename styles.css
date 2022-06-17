@@ -116,7 +116,7 @@ tr:nth-child(even) {
 
 /* List Stuff: */
 .list-group {
-    max-width: 90%;
+    width: 50%;
 }
 
 .list-header {
@@ -129,6 +129,7 @@ tr:nth-child(even) {
 .list-item {
     padding: 12px 20px 12px 20px;
     border: 1px solid #dfdfdf;
+    width: 100%;
 }
 
 .list-item:hover {
