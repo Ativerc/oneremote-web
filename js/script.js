@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-"use strict";
+'use strict';
 
 let xhr = new XMLHttpRequest();
 xhr.open("GET", "temp_data/tatasky.csv");

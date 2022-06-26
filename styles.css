@@ -116,6 +116,7 @@ tr:nth-child(even) {
 
 /* List Stuff: */
 .list-group {
+    margin: 0 auto;
     width: 50%;
 }
 
@@ -127,7 +128,7 @@ tr:nth-child(even) {
 
 
 .list-item {
-    padding: 12px 20px 12px 20px;
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
     border: 1px solid #dfdfdf;
     width: 100%;
 }
@@ -203,11 +204,12 @@ div[class="list-group"]:first-child {
         width: 80%;
     }
     .list-group {
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
     }
 
     .list-item {
-        padding: 5px 5px 5px 5px;
+        padding: .5rem;
     }
 
     .icon {
