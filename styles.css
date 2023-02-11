@@ -121,6 +121,13 @@ tr:nth-child(even) {
 }
 
 .list-header {
+    margin: 0 auto;
+    width: 50%;
+
+    border: 1px solid #dfdfdf;
+
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem; 
+
     font-weight: 700;
     font-size: 1.25rem;
     text-align: center;
@@ -132,6 +139,7 @@ tr:nth-child(even) {
     border: 1px solid #dfdfdf;
     width: 100%;
 }
+
 
 .list-item:hover {
     background-color: #eee;
