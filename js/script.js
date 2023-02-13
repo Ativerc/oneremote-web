@@ -47,9 +47,9 @@ function createListItem(entry) {
 }
 
 function searchFunction() {
-    let input, filter, listGroup, listItem, chanName, chanNameText;
-    input = document.getElementById('chanSearch');
-    filter = input.value.toUpperCase();
+    let searchBox, filter, listGroup, listItem, chanName, chanNameText;
+    searchBox = document.getElementById('chanSearch');
+    filter = searchBox.value.toUpperCase();
     listGroup = document.getElementsByClassName('list-group')[0];
     listItem = document.getElementsByClassName('list-item');
     for (let i = 0; i < listItem.length; i++){
@@ -57,12 +57,33 @@ function searchFunction() {
         chanNameText = chanName.innerText;
         if (chanNameText.toUpperCase().indexOf(filter) > -1) {
             listItem[i].style.display="flex";
+            clearListHeader();
         } else {
             listItem[i].style.display = "none";
+            clearListHeader();
         };
     };
 };
+
 document.addEventListener("keypress", setFocus);
 function setFocus(){
     document.getElementById("chanSearch").focus();
+}
+
+function isSearchBoxEmpty() {
+    let searchBox = document.getElementById('chanSearch');
+    if (searchBox.value.length > 0) {
+        console.log(searchBox.value.length)
+        return false
+    } else {
+        return true
+    }
+}
+
+function clearListHeader() {
+    if (isSearchBoxEmpty()) {
+        document.querySelector('.list-header').style.display="flex";
+    } else {
+        document.querySelector('.list-header').style.display="none";
+    }
 }
