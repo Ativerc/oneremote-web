@@ -7,6 +7,8 @@ xhr.send();
 let csvfile;
 xhr.onload = listItems;
 
+document.querySelector("#chanSearch").addEventListener("keyup", searchFunction)
+
 
 function listItems() {
     if (xhr.status != 200){
@@ -73,10 +75,9 @@ function setFocus(){
 function isSearchBoxEmpty() {
     let searchBox = document.getElementById('chanSearch');
     if (searchBox.value.length > 0) {
-        console.log(searchBox.value.length)
-        return false
+        return false;
     } else {
-        return true
+        return true;
     }
 }
 
@@ -86,4 +87,8 @@ function clearListHeader() {
     } else {
         document.querySelector('.list-header').style.display="none";
     }
+}
+
+function emboldenCharacters(searchBoxText, itemText) {
+    
 }
