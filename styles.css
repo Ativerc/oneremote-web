@@ -213,6 +213,10 @@ div[class="list-group"]:first-child {
     input {
         width: 80%;
     }
+
+    .list-header {
+        width: 95%;
+    }
     .list-group {
         width: 95%;
         margin: 0 auto;
