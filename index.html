@@ -38,11 +38,27 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            <form>
+              <div class="mb-3">
+                <label for="serverIPURL" class="form-label">Server IP or URL</label>
+                <input type="text" class="form-control" id="serverIPURL" aria-describedby="Help">
+                <div id="serverHelp" class="form-text">IP or URL of the server to connect to.</div>
+              </div>
+              <div class="mb-3">
+                <label for="topicText" class="form-label">Topic</label>
+                <input type="text" class="form-control" id="topicText">
+              </div>
+              <!-- <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div> -->
+              <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save & Exit</button>
+          <div class="modal-footer justify-content-evenly">
+            <button id="settings-reset" type="button" class="btn btn-warning">Reset</button>
+            <button id="settings-cancel" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            <button id="settings-save-exit" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save & Exit</button>
           </div>
         </div>
       </div>
