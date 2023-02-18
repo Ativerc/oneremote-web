@@ -38,15 +38,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="settings-form">
               <div class="mb-3">
                 <label for="serverIPURL" class="form-label">Server IP or URL</label>
-                <input type="text" class="form-control" id="serverIPURL" aria-describedby="Help">
+                <input type="text" class="form-control" id="serverIPURL" aria-describedby="Help" required>
                 <div id="serverHelp" class="form-text">IP or URL of the server to connect to.</div>
               </div>
               <div class="mb-3">
                 <label for="topicText" class="form-label">Topic</label>
-                <input type="text" class="form-control" id="topicText">
+                <input type="text" class="form-control" id="topicText" required>
               </div>
               <!-- <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -58,7 +58,7 @@
           <div class="modal-footer justify-content-evenly">
             <button id="settings-reset" type="button" class="btn btn-warning">Reset</button>
             <button id="settings-cancel" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-            <button id="settings-save-exit" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save & Exit</button>
+            <button id="settings-save-exit" type="submit" form="settings-form" class="btn btn-primary" data-bs-dismiss="modal">Save & Exit</button>
           </div>
         </div>
       </div>
