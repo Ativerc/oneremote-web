@@ -98,6 +98,8 @@ function emboldenCharacters(searchBoxText, itemText) {
 
 // Settings Events
 
+window.addEventListener("load", onPageload());
+
 document.getElementById("settings-reset").addEventListener("click", resetLocalStorage);
 document.getElementById("settings-save-exit").addEventListener("click", onSettingsSave);
 
