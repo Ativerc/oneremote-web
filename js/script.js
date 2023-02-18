@@ -112,7 +112,9 @@ function onPageload() {
         console.log("ModalMessage: Error! localStorage not available!");
     } else {
         if (doesLocalStorageHaveData() === true) {
+            console.log("Got data from local storage.");
             getFromLocalStorage();
+            turnButtons(); // This doesn't work for some reason!
         } else {
             console.log("ModalMessage: localStorage doesn't have data!");
         }
@@ -125,6 +127,7 @@ function onSettingsSave() {
     } else {
         if (isServerSettingsIncomplete() !== true) {
             saveInLocalStorage();
+            turnButtons(); // This works!
         }   else {
             console.log("Modal Message: Server Settings incomplete! Please complete all fields!")
         }
@@ -213,9 +216,12 @@ function isServerSettingsIncomplete() {
 }
 
 function turnButtons() {
+    console.log("Greenified!");
     const buttons = document.getElementsByClassName("channel_button");
     for (let i = 0; i < buttons.length; i++) {
+            buttons[i].removeAttribute('disabled');
             buttons[i].className += " btn-success";
+
         }
     
 }
