@@ -114,7 +114,7 @@ function onPageload() {
         if (doesLocalStorageHaveData() === true) {
             console.log("Got data from local storage.");
             getFromLocalStorage();
-            turnButtons(); // This doesn't work for some reason!
+            setTimeout(turnButtons, 500); // This works now!
         } else {
             console.log("ModalMessage: localStorage doesn't have data!");
         }
@@ -216,13 +216,13 @@ function isServerSettingsIncomplete() {
 }
 
 function turnButtons() {
-    console.log("Greenified!");
     const buttons = document.getElementsByClassName("channel_button");
+    console.log(buttons.length);
     for (let i = 0; i < buttons.length; i++) {
             buttons[i].removeAttribute('disabled');
             buttons[i].className += " btn-success";
-
         }
+    console.log("Greenified!");
     
 }
 
