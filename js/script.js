@@ -40,12 +40,15 @@ function createListItem(entry) {
     divvy.append(left_div);
     divvy.append(right_div);
     let channel_name_div = document.createElement('div');
-    channel_name_div.className = "name";
+    channel_name_div.className = "channel_name";
     channel_name_div.innerHTML = `${entry[1]}`;
     left_div.append(channel_name_div);
-    let channel_no = document.createElement('div');
-    channel_no.innerHTML="<strong>"+ `${entry[4]}` + "</strong>";
+    let channel_no = document.createElement('button');
+    channel_no.className += "channel_button btn btn-lg fw-bold";
+    channel_no.innerHTML=`${entry[4]}`;
+    channel_no.setAttribute('disabled', 'disabled');
     right_div.append(channel_no);
+    // channel
 }
 
 function searchFunction() {
@@ -55,7 +58,7 @@ function searchFunction() {
     listGroup = document.getElementsByClassName('list-group')[0];
     listItem = document.getElementsByClassName('list-item');
     for (let i = 0; i < listItem.length; i++){
-        chanName = listItem[i].getElementsByClassName("name")[0];
+        chanName = listItem[i].getElementsByClassName("channel_name")[0];
         chanNameText = chanName.innerText;
         if (chanNameText.toUpperCase().indexOf(filter) > -1) {
             listItem[i].style.display="flex";
@@ -93,7 +96,7 @@ function emboldenCharacters(searchBoxText, itemText) {
     
 }
 
-// Settigs Events
+// Settings Events
 
 document.getElementById("settings-reset").addEventListener("click", resetLocalStorage);
 document.getElementById("settings-save-exit").addEventListener("click", onSettingsSave);
@@ -164,19 +167,6 @@ function doesLocalStorageHaveData() {
 }
 
 
-    // if (storageAvailable('localStorage')) {
-    //     console.log('localStorage Available!');
-    //     if (!localStorage.getItem('server')) {
-    //         saveInLocalStorage();
-    //     } else {
-    //         getFromLocalStorage();
-    //     }
-        
-    // } else {
-    //     // msgModal : localStorage unavailable
-
-    // }
-
 
 function saveInLocalStorage() {
     localStorage.setItem('server', document.getElementById('serverIPURL').value);
@@ -218,6 +208,14 @@ function isServerSettingsIncomplete() {
     } else {
         return false;
     }
+}
+
+function turnButtons() {
+    const buttons = document.getElementsByClassName("channel_button");
+    for (let i = 0; i < buttons.length; i++) {
+            buttons[i].className += " btn-success";
+        }
+    
 }
 
 // MQTT
